@@ -1,20 +1,26 @@
-version: '3'
+version: '3.7'
 services:
   client:
-    build: ./client
-    volumes:
-      - ./client:/client
-      - /client/node_modules
-    ports:
-      - 3000:3000
-    container_name: rfc-scraper-client
-    depends_on:
+    build:
+      context: ./client
+    expose:
+      - '3000'
+    links:
       - server
-  server:
-    build: ./server
-    volumes:
-      - ./server:/server
-      - /server/node_modules
     ports:
-      - 8000:8000
-    container_name: rfc-scraper-server
+      - '3000:3000'
+    stdin_open: true
+    volumes:
+      - ./client/src:/app/client/src
+      - ./client/public:/app/client/public
+    command: npm run start
+  server:
+    build:
+      context: ./server
+    expose:
+      - '8000'
+    ports:
+      - '8000:8000'
+    volumes:
+      - ./server/src:/app/server/src
+    command: npm run dev
