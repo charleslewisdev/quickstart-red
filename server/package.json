@@ -1,0 +1,9 @@
+{
+  "name": "rfc-scraper-server",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "express": "4.17.1",
+    "node-fetch": "^2.6.0"
+  }
+}
