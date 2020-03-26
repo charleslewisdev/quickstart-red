@@ -1,5 +1,5 @@
 {
-  "name": "rfc-assist-server",
+  "name": "quickstart-red-server",
   "version": "0.0.0",
   "main": "index.js",
   "scripts": {
@@ -9,9 +9,9 @@
   "dependencies": {
     "express": "4.17.1",
     "node-fetch": "^2.6.0",
-    "prettier": "^1.19.1"
+    "prettier": "^2.0.2"
   },
   "devDependencies": {
-    "nodemon": "^1.19.4"
+    "nodemon": "^2.0.2"
   }
 }
